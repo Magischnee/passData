@@ -22,9 +22,9 @@ class WelcomeViewController: UIViewController {
         nameLabel.text = "Hello, \(loginWelcome ?? "user")"
         
         //or
-        
+        //we can check IF our loginWelcome received any msg
         //guard let login = self.loginWelcome else { return }
-        //nameLabel.tet = "Hello, \(loginWelcome)"
+        //nameLabel.text = "Hello, \(loginWelcome)"
     }
     
 }
