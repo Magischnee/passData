@@ -15,6 +15,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBAction func pushButton(_ sender: UIButton) {
     }
+    @IBOutlet weak var whatsChangedLabel: UILabel!
+    
+    //this function will terminate our welcomeViewController window
+    //and relocate us to our main screen
+    @IBAction func unwindSegueToMainScreen(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindSegue" else { return }
+        guard let svc = segue.source as? WelcomeViewController else { return }
+        // or guard segue.source is WelcomeViewController else { return }
+        self.whatsChangedLabel.text = svc.nameLabel.text
+        // so now this function allow us to receive data from terminated WelcomeViewController screen
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //trying to reach destination point next ViewController

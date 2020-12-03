@@ -13,6 +13,11 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBAction func backButton(_ sender: UIButton) {
+        //now our segue is connected to the button, not to the screen
+        //and if we ll swapped our welcome screen
+        //data in the label at the main screen won`t be changed
+        //only by press button it will be changed
+        performSegue(withIdentifier: "unwindSegue", sender: nil)
     }
     //we need to override our method(screen) coz we received some information
     //from other view without doing any actions on current view

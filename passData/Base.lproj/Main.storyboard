@@ -54,15 +54,33 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGv-8A-PCf">
+                                <rect key="frame" x="119" y="669" width="176" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="Fwe-RV-ie7"/>
+                                    <constraint firstAttribute="width" constant="176" id="mLR-Fl-lJF"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Whats changed?">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="23"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cMa-ky-ihq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="0hj-gs-PZ0"/>
+                            <constraint firstItem="lGv-8A-PCf" firstAttribute="centerX" secondItem="KFh-kM-EsV" secondAttribute="centerX" id="1AR-VY-Nre"/>
                             <constraint firstItem="FvK-we-EJ4" firstAttribute="top" secondItem="iqz-AT-N7R" secondAttribute="bottom" constant="26" id="PGu-bi-4vs"/>
                             <constraint firstItem="cMa-ky-ihq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QJ9-Ug-2Q6"/>
                             <constraint firstItem="KFh-kM-EsV" firstAttribute="top" secondItem="FvK-we-EJ4" secondAttribute="bottom" constant="160" id="Xsf-e5-tyY"/>
                             <constraint firstItem="iqz-AT-N7R" firstAttribute="top" secondItem="cMa-ky-ihq" secondAttribute="bottom" constant="117" id="b8k-TO-8VP"/>
+                            <constraint firstItem="lGv-8A-PCf" firstAttribute="top" secondItem="KFh-kM-EsV" secondAttribute="bottom" constant="83" id="hoq-vh-ZfM"/>
                             <constraint firstItem="KFh-kM-EsV" firstAttribute="centerX" secondItem="FvK-we-EJ4" secondAttribute="centerX" id="pqm-7n-SXq"/>
                             <constraint firstItem="FvK-we-EJ4" firstAttribute="centerX" secondItem="iqz-AT-N7R" secondAttribute="centerX" id="ql5-s4-c6M"/>
                             <constraint firstItem="iqz-AT-N7R" firstAttribute="centerX" secondItem="cMa-ky-ihq" secondAttribute="centerX" id="uvc-dS-dJ5"/>
@@ -71,6 +89,7 @@
                     <connections>
                         <outlet property="loginField" destination="iqz-AT-N7R" id="dQw-xt-8u5"/>
                         <outlet property="password" destination="FvK-we-EJ4" id="LHx-ZX-KDM"/>
+                        <outlet property="whatsChangedLabel" destination="lGv-8A-PCf" id="KFe-qc-kdl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -101,6 +120,7 @@
                                 </state>
                                 <connections>
                                     <action selector="backButton:" destination="hy2-so-B6B" eventType="touchUpInside" id="7lT-l6-MBO"/>
+                                    <segue destination="a8S-xk-LDj" kind="unwind" identifier="unwindSegue" unwindAction="unwindSegueToMainScreenWithSegue:" id="gBY-5D-xcD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,6 +133,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNy-vf-o9q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="a8S-xk-LDj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="818.84057971014499" y="92.410714285714278"/>
         </scene>
